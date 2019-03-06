@@ -1,6 +1,7 @@
 package edu.iis.mto.lab_0;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class TailsGenerator {
@@ -8,10 +9,13 @@ public class TailsGenerator {
     public List<String> tails(String value)
     {
 
-        if(value==(null)) return new ArrayList<>();
+        if(value==(null)) {
+            return Collections.emptyList();
+        }
         List<String> list = new ArrayList<>();
-        for(int i = 0;i<value.length();i++)
+        for(int i = 0;i<value.length();i++) {
             list.add(value.substring(i));
+        }
         list.add("");
         return list;
     }
